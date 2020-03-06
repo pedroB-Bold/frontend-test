@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import "./HomePage.css"
 import MovieItem from "../../Components/MovieItem"
@@ -73,14 +79,23 @@ export default class HomePage extends React.Component{
       
       const nMovies = this.state.movies.length; //10;
       
-
       for(let i=0; i < nMovies; i++){
-        let title = this.state.movies[i].Title;
-        let poster = this.state.movies[i].Poster;
+        const movie = this.state.movies[i];
+        let title = movie.Title;
+        let poster = movie.Poster;
         
-        x.push(<MovieItem  title={title + i} poster={poster}/>)
+      x.push( <Link
+                to={{
+                  pathname: "/"+title, /* /moviePage */
+                  state: {
+                    movieInfo: movie
+                  }
+                }}>
+                  <MovieItem title={title + i} poster={poster}/>
+                </Link>
+              )
       }
-      console.log(x)
+      // console.log(x)
       return x;
     }
 
