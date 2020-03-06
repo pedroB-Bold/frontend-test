@@ -1,7 +1,6 @@
 import React from 'react';
 import "./MovieItem.css";
 
-const title = "Some cool movie";
 const movieItem = (props) => {
     let title = props.title;
     let poster = props.poster;
