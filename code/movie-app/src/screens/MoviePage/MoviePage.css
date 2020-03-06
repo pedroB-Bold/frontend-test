@@ -1,0 +1,52 @@
+.moviePageContainer{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.moviePageDetailContainer{
+    display: flex;
+    margin-top: 30px;
+}
+
+.moviePagePosterContainer {
+    margin-left: auto;
+}
+
+.moviePageImg {
+    width: 300px;
+    height: 400px;
+  }
+
+.moviePageDescription {
+    margin-right: 80px;
+}
+
+.moviePagePlot {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.moviePageTitle {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#moviePagePlotSection{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.moviePageList{
+    margin-left: -25px;
+}
+
+.moviePagePlotSectionOther{
+    display: flex;
+}
+
+.moviePagePlotSectionOtherItem{
+    margin-right: 50px;
+}
+
+#moviePageHomeBtn{
+}
