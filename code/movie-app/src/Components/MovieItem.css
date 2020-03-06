@@ -1,0 +1,19 @@
+.movieItemBox {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 165px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .movieTitle {
+    margin-left: 5%;
+  }
+  .movieItemImg {
+    width: 150px;
+    height: 150px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }

@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+import HomePage from './screens/HomePage';
 
 function App() {
   return (
-    <div>Hey!</div>
+    <HomePage />
   )
 }
 
