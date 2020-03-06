@@ -1,6 +1,14 @@
 import React from 'react';
 
 const MovieDescription = (props) => {
+    const otherInfoSection = (
+        <>
+            {otherInfo('Cast', props.cast)}
+            {otherInfo('Genre', props.genre)}
+            {otherInfo('Director', props.director)}
+        </>   
+    )
+    
     return (
         <div className='moviePageDescription'>
             <div className='moviePageTitle'>
@@ -10,11 +18,8 @@ const MovieDescription = (props) => {
                 <div id='moviePagePlotSection'>Plot</div>
                 {props.plot}
             </div>
-            <div class='moviePagePlotSectionOther'>
-                {otherInfo('Cast', props.cast)}
-                {otherInfo('Genre', props.genre)}
-                {otherInfo('Director', props.director)}
-
+            <div className='moviePagePlotSectionOther'>
+                {otherInfoSection}
             </div> 
         </div>
     )
@@ -22,7 +27,7 @@ const MovieDescription = (props) => {
 
 const otherInfo = (title, list) => {
     return(
-        <div class='moviePagePlotSectionOtherItem'>
+        <div className='moviePagePlotSectionOtherItem'>
             {title}
             <ul className='moviePageList'>
                 { createList(list) }
