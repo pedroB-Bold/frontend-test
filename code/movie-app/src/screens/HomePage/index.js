@@ -8,7 +8,7 @@ import {
 
 import "./HomePage.css"
 import MovieItem from "../../Components/MovieItem"
-
+import Header from '../../Components/Header'
 import {getMoviesOlderMovies, getMoviesByTitle, getMoviesFromAPI } from '../../api/moviesApi'
 
 export default class HomePage extends React.Component{
@@ -55,25 +55,7 @@ export default class HomePage extends React.Component{
         text: e.target.value
       });
     }
-
-    header = () => (
-      <div className="header">
-        {/* <img
-          className="logo"
-          src="https://talentportugal.com/wp-content/uploads/listing-uploads/logo/2019/06/4dUkCtgE.jpg"
-          alt="movieImg"
-        /> */}
-        <form className="form" onSubmit={this.handleSubmit}>
-          <input
-            style={{ width: "100%" }}
-            value={this.state.text}
-            onChange={e => this.handleChange(e)}
-          />
-          <button>Add</button>
-        </form>
-      </div>
-    );
-    
+  
     renderMovies = () => {
       let x =[];
       
@@ -103,8 +85,8 @@ export default class HomePage extends React.Component{
 
     render() {
         return (
-          <div>
-            {this.header()}
+          <div className="homePageContainer">
+            <Header value={this.state.text} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
             <div className="moviesContainer">
               {this.renderMovies()}
             </div>

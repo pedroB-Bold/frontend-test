@@ -1,23 +1,12 @@
-  .header {
-    display: flex;
-    margin-bottom: 5%;
-    margin-right: 5%;
+  .homePageContainer{
+      margin-left: 10%;
+      margin-right: 10%;
   }
-  .logo {
-    width: 25%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  
-  .form {
-    width: 100%;
-  }
-  
+
   .moviesContainer{
       display: flex;
       flex-wrap: wrap;
-      margin-left: 10%;
-      margin-right: 10%;
+      margin-top: 5%;
   }
 
   a {
