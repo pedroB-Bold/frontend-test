@@ -40,7 +40,6 @@ export const getMoviesOlderMovies = async(title) => {
                                 method: 'GET', 
                             }
 
-            // await fetch('http://www.omdbapi.com/?t=sd&y=2018&apikey=b7bcea5f', config)
             await fetch(MOVIE_YEAR_URL, config)
                     .then( (e) => {
                         return e.json();                   
@@ -52,7 +51,7 @@ export const getMoviesOlderMovies = async(title) => {
                     } )
         }
     
-    console.log({movies})
+    // console.log({movies})
     return movies;
 }
 
