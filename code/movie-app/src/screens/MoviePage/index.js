@@ -4,30 +4,85 @@ import './MoviePage.css';
 const poster = "https://www.w3schools.com/html/img_girl.jpg";
 
 export default class MoviePage extends React.Component{
-    title='Some Cool Title';
-    plot = <> 
-             You can control the align-items value for individual elements with align-self. 
-                You can also use margins to move individual elements up or down or left of right. 
-                e.g. on a column layout you can move an individual flex item all the way to the left of the 
-                container by setting margin-right: auto. 
-                <br/>
-                sdfsdfsdf
-                <br/>
-                <br/>
-                <br/>
+    constructor(props){
+        super(props);
 
-                dsfdsfsd
-                <br/>
+        let title, plot, list, cast, genre, director;
+        this.mockData();
 
-                fdsfsdfsdf
-            </>
-
-    list = [{'som': 'Coffee'}, {'som': 'Coffee'}, {'som': 'Coffee'},  {'som': 'Coffee'}]
-    cast = this.list;
-    genre = this.list;
-    director = this.list;
+        this.getParamsFromScreen();
+    }
 
     action = () => console.log("Go Home");
+
+    getParamsFromScreen = () => {
+        const { movieInfo } = this.props.location.state
+        // console.log( this.props.location.state)
+        // console.log(this.cast)
+
+        this.title = this.getMovieTitle(movieInfo);
+        this.plot = this.getPlot(movieInfo);
+        this.director = this.getMovieDirector(movieInfo);
+        this.cast = this.getMovieCast(movieInfo);
+    }
+
+    getMovieTitle = (movieInfo) => {
+        const mTitle = movieInfo.Title;
+        if(mTitle){
+            return mTitle;
+        }
+        else{
+            return this.title;
+        }
+    }
+
+    getPlot = (movieInfo) => {
+        const mPlot = movieInfo.Plot;
+        if(mPlot){
+            return <>{mPlot}</>;
+        }
+        else{
+            return this.plot;
+        }
+    }
+
+    getMovieDirector = (movieInfo) => {
+        const mDirector = movieInfo.Director;
+
+        if(mDirector){
+            if(mDirector.lenght > 1){
+                return mDirector.split(", ");
+            }else{ 
+                return [mDirector];
+            }
+        }
+        else{
+            return this.director;
+        }
+    }
+
+    getMovieCast = (movieInfo) => {
+       if(movieInfo.Actors){
+            return movieInfo.Actors.split(", ");
+        } 
+        else{
+            return this.cast;
+        }
+    }
+
+    mockData = () => {
+        this.title='Some Cool Title';
+        this.plot = <> 
+                        There is no info about the plot of this movie to show.
+                        <br/>
+                        Please check again in a few days
+                        <br/>
+                    </>;
+
+        this.cast = "The cast, is unknown, at this time".split(", ");
+        this.genre = "genre, is, unknown".split(", ");
+        this.director = "Unknown Director".split(", ");
+    }
 
     render() {
         return (
