@@ -16,7 +16,8 @@ export default class HomePage extends React.Component{
       super(props);
       this.state = {
         movies: [{'Title': 'The cool Movie'},{},{}],
-        text: "search movie"
+        text: "search movie",
+        loading: true,
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
@@ -37,9 +38,13 @@ export default class HomePage extends React.Component{
     // movies = [];
 
     getMovies = async (title) => {
-      const movies = await getMoviesFromAPI(title);
-      this.setState({ movies });
+      // Start load
+      this.setState({ loading: true });
 
+      const movies = await getMoviesFromAPI(title);
+      // End Load
+      this.setState({ movies, loading: false });
+      
       console.log(this.state.movies);
       // this.movies = this.renderMovies();
     }
@@ -92,7 +97,11 @@ export default class HomePage extends React.Component{
           <div className="homePageContainer">
             <Header value={this.state.text} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
             <div className="moviesContainer">
-              {this.renderMovies()}
+              { this.state.loading ?
+                  <div className='loader' />
+                  :
+                  this.renderMovies()
+              }
             </div>
           </div>
         );
