@@ -1,3 +1,21 @@
+Desafio Diamond ReadMe:
+	
+	Pre-requisitos: 
+ 		Necessário ter o Node versão >= 8.10 e npm versão >= 5.6 instalados
+	Ir para a pasta com o código
+		- cd frontend-test/code/movie-app
+
+	Correr o projecto
+		- yarn install
+		- npm start
+		- Abrir browser com o endereço “http://localhost:3000/”
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
