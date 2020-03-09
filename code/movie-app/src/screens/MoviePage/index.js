@@ -16,7 +16,7 @@ export default class MoviePage extends React.Component{
     action = () => console.log("Go Home");
 
     getParamsFromScreen = () => {
-        const { movieInfo } = this.props.location.state
+        const { movieInfo } = this.props.location.state;
         // console.log( this.props.location.state)
         // console.log(this.cast)
 
@@ -110,8 +110,8 @@ export default class MoviePage extends React.Component{
 
     render() {
         return (
-            <div className='moviePageContainer' onClick={this.action}>
-                <Header navigateBack={"/"}/>
+            <div className='moviePageContainer'>
+                <Header navigateBack={"/"} btnText={'HOME'}/>
                 <div className='moviePageDetailContainer'>
                     <MovieDescription 
                         title={this.title} 
