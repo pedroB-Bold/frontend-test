@@ -16,16 +16,18 @@ export default class MoviePage extends React.Component{
     action = () => console.log("Go Home");
 
     getParamsFromScreen = () => {
-        const { movieInfo } = this.props.location.state;
-        // console.log( this.props.location.state)
-        // console.log(this.cast)
+        if(this.props.location.state){        
+            const { movieInfo } = this.props.location.state;
+            // console.log( this.props.location.state)
+            // console.log(this.cast)
 
-        this.title = this.getMovieTitle(movieInfo);
-        this.plot = this.getPlot(movieInfo);
-        this.director = this.getMovieDirector(movieInfo);
-        this.cast = this.getMovieCast(movieInfo);
-        this.genre = this.getMovieGenre(movieInfo);
-        this.poster = this.getMoviePoster(movieInfo);
+            this.title = this.getMovieTitle(movieInfo);
+            this.plot = this.getPlot(movieInfo);
+            this.director = this.getMovieDirector(movieInfo);
+            this.cast = this.getMovieCast(movieInfo);
+            this.genre = this.getMovieGenre(movieInfo);
+            this.poster = this.getMoviePoster(movieInfo);
+        }
     }
 
     getMovieTitle = (movieInfo) => {
