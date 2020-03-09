@@ -1,6 +1,10 @@
 import React from 'react';
 
 const MovieDescription = (props) => {
+    console.log(props.cast);
+    console.log(props.genre);
+    console.log(props.director);
+
     const otherInfoSection = (
         <>
             {otherInfo('Cast', props.cast)}
@@ -40,7 +44,7 @@ const createList = (list) => {
     let row = [];
     
     for(let i=0; i < list.length; i++){
-        row.push(<li>{list[i].som}</li>)
+        row.push(<li>{list[i]}</li>)
     }
 
     return row;
