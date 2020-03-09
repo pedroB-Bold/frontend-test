@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import MovieDescription from '../../Components/MovieDescription';
+import Header from '../../Components/Header';
 import './MoviePage.css';
 
 export default class MoviePage extends React.Component{
@@ -99,6 +100,8 @@ export default class MoviePage extends React.Component{
     render() {
         return (
             <div className='moviePageContainer' onClick={this.action}>
+                <Header />
+
                 <Link to="/">
                     <div id='moviePageHomeBtn'>HOME</div>
                 </Link>
