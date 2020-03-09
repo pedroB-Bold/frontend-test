@@ -30,7 +30,6 @@
     font-weight: bold;
     font-size: 30px;
     display: flex;
-    line-height: 0px;    
 }
 
 #moviePagePlotSection{
@@ -53,4 +52,5 @@
 .moviePageFavIcon{
     width: 50px;
     height: 50px;
+    margin-top: 23px;
 }
