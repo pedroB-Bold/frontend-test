@@ -7,7 +7,6 @@ export const getMoviesFromAPI = async (title) => {
     if(!movieList){
         memoMovies[title] = await getMoviesOlderMovies(title);
        
-        console.log({memoMovies});
         return memoMovies[title];
     }
 
@@ -58,8 +57,6 @@ export const getMoviesOlderMovies = async(title) => {
 
 const checkExists = (movieTitle) => {
     const nItemsToStore = 20;
-
-    console.log("should return false " + memoMovies[movieTitle])
 
     if(memoMovies[movieTitle]){
         return memoMovies[movieTitle];
