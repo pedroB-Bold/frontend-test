@@ -13,13 +13,13 @@ export default class MoviePage extends React.Component{
         this.getParamsFromScreen();
     }
 
-    action = () => console.log("Go Home");
+    handleSubmit(e) {
+        e.preventDefault();
+    }
 
     getParamsFromScreen = () => {
         if(this.props.location.state){        
             const { movieInfo } = this.props.location.state;
-            // console.log( this.props.location.state)
-            // console.log(this.cast)
 
             this.title = this.getMovieTitle(movieInfo);
             this.plot = this.getPlot(movieInfo);
@@ -42,11 +42,11 @@ export default class MoviePage extends React.Component{
 
     getPlot = (movieInfo) => {
         const mPlot = movieInfo.Plot;
-        if(mPlot){
-            return <>{mPlot}</>;
+        if(!mPlot || mPlot === 'N/A'){
+            return this.plot;
         }
         else{
-            return this.plot;
+            return <>{mPlot}</>;
         }
     }
 
@@ -113,7 +113,7 @@ export default class MoviePage extends React.Component{
     render() {
         return (
             <div className='moviePageContainer'>
-                <Header navigateBack={"/"} btnText={'HOME'}/>
+                <Header navigateBack={"/"} btnText={'HOME'} handleSubmit={this.handleSubmit}/>
                 <div className='moviePageDetailContainer'>
                     <MovieDescription 
                         title={this.title} 
