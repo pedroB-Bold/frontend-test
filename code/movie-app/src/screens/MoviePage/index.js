@@ -73,11 +73,11 @@ export default class MoviePage extends React.Component{
 
     getMoviePoster = (movieInfo) => {
         const mPoster = movieInfo.Poster;
-        if(mPoster){
-            return mPoster;
+        if(!mPoster || mPoster === 'N/A'){
+            return this.poster;
         }
         else{
-            return this.poster;
+            return mPoster;
         }
     }
 
