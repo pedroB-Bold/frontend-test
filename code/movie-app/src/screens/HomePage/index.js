@@ -57,28 +57,32 @@ export default class HomePage extends React.Component{
     }
   
     renderMovies = () => {
-      let x =[];
       
       const nMovies = this.state.movies.length; //10;
-      
-      for(let i=0; i < nMovies; i++){
-        const movie = this.state.movies[i];
-        let title = movie.Title;
-        let poster = movie.Poster;
-        
-      x.push( <Link
-                to={{
-                  pathname: "/"+title, /* /moviePage */
-                  state: {
-                    movieInfo: movie
-                  }
-                }}>
-                  <MovieItem title={title} poster={poster}/>
-                </Link>
-              )
+
+      if(nMovies){
+        let x =[];
+
+        for(let i=0; i < nMovies; i++){
+          const movie = this.state.movies[i];
+          let title = movie.Title;
+          let poster = movie.Poster;
+          
+          x.push( <Link
+                    to={{
+                      pathname: "/"+title, /* /moviePage */
+                      state: {
+                        movieInfo: movie
+                      }
+                    }}>
+                      <MovieItem title={title} poster={poster}/>
+                    </Link>
+                  )
+        }
+        // console.log(x)
+        return x;
       }
-      // console.log(x)
-      return x;
+     return <div className='noResultsFound'><p>No Movies were found!!!</p></div>
     }
 
     // movies = this.renderMovies();
