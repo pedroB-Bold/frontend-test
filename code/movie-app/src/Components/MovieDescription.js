@@ -1,10 +1,6 @@
 import React from 'react';
 
 const MovieDescription = (props) => {
-    console.log(props.cast);
-    console.log(props.genre);
-    console.log(props.director);
-
     const otherInfoSection = (
         <>
             {otherInfo('Cast', props.cast)}
