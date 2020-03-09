@@ -16,7 +16,6 @@ const Header = (props) => (
           value={props.value}
           onChange={e => props.handleChange(e)}
         />
-        <button>Add</button>
       </form>
     </div>
     {props.navigateBack ? 
