@@ -73,7 +73,7 @@ export default class HomePage extends React.Component{
                     movieInfo: movie
                   }
                 }}>
-                  <MovieItem title={title + i} poster={poster}/>
+                  <MovieItem title={title} poster={poster}/>
                 </Link>
               )
       }
