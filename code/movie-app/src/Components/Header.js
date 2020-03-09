@@ -7,7 +7,7 @@ const Header = (props) => (
     <div className="header">
       <img
         className="logo"
-        src="https://talentportugal.com/wp-content/uploads/listing-uploads/logo/2019/06/4dUkCtgE.jpg"
+        src={require('../images/diamond.png')} //"https://talentportugal.com/wp-content/uploads/listing-uploads/logo/2019/06/4dUkCtgE.jpg"
         alt="movieImg"
       />
       <form className="form" onSubmit={props.handleSubmit}>
@@ -21,7 +21,7 @@ const Header = (props) => (
     </div>
     {props.navigateBack ? 
         <Link to={props.navigateBack}>
-          <div id='moviePageHomeBtn'>HOME</div>
+          <div id='moviePageHomeBtn'>{props.btnText}</div>
         </Link>
         :
         null    
