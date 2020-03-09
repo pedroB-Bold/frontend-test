@@ -15,8 +15,8 @@ export default class HomePage extends React.Component{
     constructor(props) {
       super(props);
       this.state = {
-        movies: [],
-        text: "sds"
+        movies: [{'Title': 'The cool Movie'},{},{}],
+        text: "search movie"
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
