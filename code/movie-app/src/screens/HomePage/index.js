@@ -25,17 +25,8 @@ export default class HomePage extends React.Component{
     }
 
     componentDidMount(props){
-      console.log("componentDidMount");
-
       this.getMovies("blade");
-
     }
-
-    componentWillUnmount(props){
-      console.log("componentWillUnmount");
-    }
-
-    // movies = [];
 
     getMovies = async (title) => {
       // Start load
@@ -43,15 +34,11 @@ export default class HomePage extends React.Component{
 
       const movies = await getMoviesFromAPI(title);
       // End Load
-      this.setState({ movies, loading: false });
-      
-      console.log(this.state.movies);
-      // this.movies = this.renderMovies();
+      this.setState({ movies, loading: false });      
     }
 
     handleSubmit(e) {
       e.preventDefault();
-      // console.log("submit", e);
       this.getMovies(this.state.text);
     }
 
@@ -84,13 +71,10 @@ export default class HomePage extends React.Component{
                     </Link>
                   )
         }
-        // console.log(x)
         return x;
       }
      return <div className='noResultsFound'><p>No Movies were found!!!</p></div>
     }
-
-    // movies = this.renderMovies();
 
     render() {
         return (
