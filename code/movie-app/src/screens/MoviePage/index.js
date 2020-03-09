@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import MovieDescription from '../../Components/MovieDescription';
 import './MoviePage.css';
-const poster = "https://www.w3schools.com/html/img_girl.jpg";
 
 export default class MoviePage extends React.Component{
     constructor(props){
         super(props);
 
-        let title, plot, list, cast, genre, director;
+        let title, plot, list, cast, genre, director, poster;
         this.mockData();
 
         this.getParamsFromScreen();
@@ -25,6 +24,7 @@ export default class MoviePage extends React.Component{
         this.plot = this.getPlot(movieInfo);
         this.director = this.getMovieDirector(movieInfo);
         this.cast = this.getMovieCast(movieInfo);
+        this.poster = this.getMoviePoster(movieInfo);
     }
 
     getMovieTitle = (movieInfo) => {
@@ -71,6 +71,16 @@ export default class MoviePage extends React.Component{
         }
     }
 
+    getMoviePoster = (movieInfo) => {
+        const mPoster = movieInfo.Poster;
+        if(mPoster){
+            return mPoster;
+        }
+        else{
+            return this.poster;
+        }
+    }
+
     mockData = () => {
         this.title='Some Cool Title';
         this.plot = <> 
@@ -83,6 +93,7 @@ export default class MoviePage extends React.Component{
         this.cast = "The cast, is unknown, at this time".split(", ");
         this.genre = "genre, is, unknown".split(", ");
         this.director = "Unknown Director".split(", ");
+        this.poster = "https://www.w3schools.com/html/img_girl.jpg";
     }
 
     render() {
@@ -103,7 +114,7 @@ export default class MoviePage extends React.Component{
                     <div className='moviePagePosterContainer'>
                         <img
                             className="moviePageImg"
-                            src={poster}
+                            src={this.poster}
                             alt="movieImg"
                         />
                     </div>
