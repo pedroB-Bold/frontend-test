@@ -8,7 +8,7 @@ export default class MoviePage extends React.Component{
     constructor(props){
         super(props);
 
-        let title, plot, list, cast, genre, director, poster;
+        let title, plot, cast, genre, director, poster;
         this.mockData();
 
         this.getParamsFromScreen();
@@ -25,6 +25,7 @@ export default class MoviePage extends React.Component{
         this.plot = this.getPlot(movieInfo);
         this.director = this.getMovieDirector(movieInfo);
         this.cast = this.getMovieCast(movieInfo);
+        this.genre = this.getMovieGenre(movieInfo);
         this.poster = this.getMoviePoster(movieInfo);
     }
 
@@ -79,6 +80,17 @@ export default class MoviePage extends React.Component{
         }
         else{
             return mPoster;
+        }
+    }
+
+    getMovieGenre = (movieInfo) => {
+        const mGenre = movieInfo.Genre;
+        
+        if(mGenre){
+            return mGenre.split(", ");
+        }
+        else{
+            return this.genre;
         }
     }
 
