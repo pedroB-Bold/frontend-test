@@ -6,11 +6,19 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
+    height: 270px;
   }
   
+.movieItem{
+  display: table-cell;
+  vertical-align: middle;
+}
+
   .movieTitle {
     margin-left: 5%;
+    height: 85px;
   }
+
   .movieItemImg {
     width: 150px;
     height: 150px;

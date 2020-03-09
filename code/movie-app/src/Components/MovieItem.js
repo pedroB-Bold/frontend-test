@@ -15,13 +15,15 @@ const movieItem = (props) => {
 
     return (
         <div className="movieItemBox" onClick={() => console.log("Touch")}>
-          <div className="movieTitle">{title}</div>
-          <div>
-            <img
-              className="movieItemImg"
-              src={poster}
-              alt="movieImg"
-            />
+          <div className="movieItem">
+            <div className="movieTitle"><p>{title}</p></div>
+            <div>
+              <img
+                className="movieItemImg"
+                src={poster}
+                alt="movieImg"
+              />
+            </div>
           </div>
         </div>
       );
