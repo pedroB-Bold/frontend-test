@@ -113,13 +113,27 @@ export default class MoviePage extends React.Component{
         this.poster = "https://www.w3schools.com/html/img_girl.jpg";
     }
 
+    renderTitle = () => {
+        return(
+        <>
+            <p>{this.title}</p>
+            <img  
+                className="moviePageFavIcon"
+                src={require('../../images/pngwave.png')}
+                alt="favIcon" 
+                onClick={() => console.log("marked as favourite")}
+                />
+        </>
+        )
+    }
+
     render() {
         return (
             <div className='moviePageContainer'>
                 <Header navigateBack={"/"} btnText={'HOME'} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
                 <div className='moviePageDetailContainer'>
                     <MovieDescription 
-                        title={this.title} 
+                        title={this.renderTitle()} 
                         plot={this.plot} 
                         cast={this.cast} 
                         genre={this.genre} 
