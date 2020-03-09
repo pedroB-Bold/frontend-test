@@ -13,8 +13,11 @@ export default class MoviePage extends React.Component{
         this.getParamsFromScreen();
     }
 
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault();
+    }
+
+    handleChange = (e) => {
     }
 
     getParamsFromScreen = () => {
@@ -113,7 +116,7 @@ export default class MoviePage extends React.Component{
     render() {
         return (
             <div className='moviePageContainer'>
-                <Header navigateBack={"/"} btnText={'HOME'} handleSubmit={this.handleSubmit}/>
+                <Header navigateBack={"/"} btnText={'HOME'} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
                 <div className='moviePageDetailContainer'>
                     <MovieDescription 
                         title={this.title} 
